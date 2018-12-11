@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import '../App.css'
+import SideBar from './SideBar'
 
 class Header extends Component {
   render(){
     return(
-      <div className='header'>
-        Neighbourhood Map
+      <div>
+        <div className='header'>
+          Neighbourhood Map
+        </div>
       </div>
     )
   }

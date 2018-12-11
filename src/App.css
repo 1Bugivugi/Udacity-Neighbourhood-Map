@@ -1,7 +1,7 @@
 #map {
   height: 92.5vh; /* viewport height */
 }
-      /* Optional: Makes the sample page fill the window. */
+/* Optional: Makes the sample page fill the window. */
 html, body {
   height: 100%;
   margin: 0;
@@ -14,4 +14,19 @@ html, body {
   background: #1b293b;
   color: white;
   font-size: 30px;
+}
+
+.infoContent {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/*
+  Responsive CSS
+*/
+
+@media screen and (max-width: 650px){
+  .header {
+    font-size: 20px
+  }
 }

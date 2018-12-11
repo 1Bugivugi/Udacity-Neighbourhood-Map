@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
+import SideBar from './SideBar'
 
 class Map extends Component {
 
@@ -41,14 +42,15 @@ class Map extends Component {
         position: {lat: myVenue.venue.location.lat , lng: myVenue.venue.location.lng},
         map: map,
         title: myVenue.venue.name,
-        animation: window.google.maps.Animation.DROP
+        animation: window.google.maps.Animation.DROP,
       })
 
 
       let infoWindowContent = `${myVenue.venue.location.address}`
+      let infoWindowContentName = `${myVenue.venue.name}`
 
       marker.addListener('click', () => {
-        infoWindow.setContent('<div>' + infoWindowContent + '</div>')
+        infoWindow.setContent('<div>' + '<div class="infoContent">' + infoWindowContent + '</div>' + infoWindowContentName + '</div>')
         infoWindow.open(map, marker)
       })
     })
@@ -81,8 +83,8 @@ class Map extends Component {
     axios.get(endPoint + new URLSearchParams(parameters))
       .then(response => {
         // console.log(response.data.response.groups[0].items)
-        this.setState({
-          venues: response.data.response.groups[0].items
+        this.setState(() => {
+          return{venues: response.data.response.groups[0].items}
         }, this.loadMap()) // <-- callback which is being executed ONLY as soon as all the data is fetched
       })
       .catch(error => {
@@ -93,7 +95,9 @@ class Map extends Component {
   render(){
     return(
       <div id='map'>
+        <SideBar
 
+        />
       </div>
     )
   }
