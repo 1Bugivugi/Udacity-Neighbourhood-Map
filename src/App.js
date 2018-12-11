@@ -1,14 +1,21 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Map from './components/Map';
+import Header from './components/Header'
 
 class App extends Component {
+
+  state = {
+    sideBarOpen: false
+  }
+
   render(){
-    <div classname='app'>
-      <Map />
-      <NavBar />
-      <SideBar />
-    </div>
+    return(
+      <main>
+        <Header />
+        <Map />
+      </main>
+    )
   }
 }
 
