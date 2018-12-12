@@ -7,6 +7,7 @@ class Header extends Component {
     return(
       <div>
         <div className='header'>
+          <SideBar />
           Neighbourhood Map
         </div>
       </div>

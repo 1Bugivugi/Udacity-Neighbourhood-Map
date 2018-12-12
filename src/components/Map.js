@@ -95,9 +95,12 @@ class Map extends Component {
   render(){
     return(
       <div id='map'>
-        <SideBar
+        { this.state ? <SideBar
+              venues={this.state.venues}
+        /> : ''}
+        <div id="page-wrap">
 
-        />
+        </div>
       </div>
     )
   }
