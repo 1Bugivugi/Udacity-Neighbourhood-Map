@@ -5,8 +5,8 @@ import SideBar from './SideBar'
 
 class Map extends Component {
 
-  state: {
-    venues: [];
+  state = {
+    venues: []
   }
 
   componentDidMount(){
@@ -94,14 +94,15 @@ class Map extends Component {
 
   render(){
     return(
-      <div id='map'>
-        { this.state ? <SideBar
-              venues={this.state.venues}
-        /> : ''}
+      <section>
+        <SideBar
+          venues={this.state.venues}
+        />
         <div id="page-wrap">
-
         </div>
-      </div>
+        <div id='map'>
+        </div>
+      </section>
     )
   }
 }

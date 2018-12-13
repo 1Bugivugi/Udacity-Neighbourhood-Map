@@ -31,6 +31,13 @@ class SideBar extends Component {
           value={this.state.query}
           onChange={(event) => this.updateQuery(event.target.value)}
         />
+        <ul>
+          {this.props.venues && this.props.venues.map((myVenue, index) => (
+              <li key={myVenue.venue.id}>{myVenue.venue.name}</li>
+          ))}
+          {<button>Ass</button>}
+        </ul>
+
       </Menu>
     )
   };

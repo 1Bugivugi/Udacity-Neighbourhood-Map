@@ -3,9 +3,11 @@
 }
 /* Optional: Makes the sample page fill the window. */
 html, body {
-  height: 100%;
   margin: 0;
-  padding: 0;
+}
+
+#App {
+  height: 100%;
 }
 
 .header {
@@ -21,12 +23,25 @@ html, body {
   font-weight: bold;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+ul li {
+  margin: 10px;
+  border-bottom:1px solid #fff;
+  padding:5px;
+}
+
 /*
   Search Input
 */
 
 .search-input {
-  color: rgb(78, 116, 232)
+  color: rgb(78, 116, 232);
+  width: 98%;
+  height: 20px;
 }
 
 /*
@@ -35,11 +50,26 @@ html, body {
 
 @media screen and (max-width: 650px){
   .header {
-    font-size: 20px
+    font-size: 20px;
+    text-align: center;
   }
 
   #map {
     height: 91.5vh;
+  }
+
+  .bm-burger-button {
+      position: fixed;
+      width: 30px;
+      height: 25px;
+      left: 30px;
+      top: 18px;
+  }
+
+  .bm-menu {
+    background: #373a47;
+    padding: 2.5em 1.5em 0;
+    font-size: 1em;
   }
 }
 
@@ -75,7 +105,7 @@ html, body {
   width: 36px;
   height: 30px;
   left: 36px;
-  top: 20px;
+  top: 21px;
 }
 
 /* Color/shape of burger icon bars */
@@ -87,9 +117,6 @@ html, body {
 .bm-cross-button {
   height: 24px;
   width: 24px;
-  position: relative;
-  top: 0px;
-  left: 240px;
 }
 
 /* Color/shape of close button cross */
@@ -102,9 +129,6 @@ html, body {
   background: #373a47;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
-  position: relative;
-  top: -15px;
-  left: -15px;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -120,7 +144,4 @@ html, body {
 /* Styling of overlay */
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
-  position: relative;
-  top: 0px;
-  left: 0px;
 }
