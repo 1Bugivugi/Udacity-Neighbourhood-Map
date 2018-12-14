@@ -12,6 +12,7 @@ class SideBar extends Component {
     this.setState({ query })
   };
 
+
   // populateSideBar = () => {
   //   const getMenu = document.getElementById('menu');
   //   this.props.venues.map(myVenue => {
@@ -33,9 +34,8 @@ class SideBar extends Component {
         />
         <ul>
           {this.props.venues && this.props.venues.map((myVenue, index) => (
-              <li key={myVenue.venue.id}>{myVenue.venue.name}</li>
+              <li key={myVenue.venue.id}><a href='#' onClick={this.props.clickHandler}>{myVenue.venue.name}</a></li>
           ))}
-          {<button>Ass</button>}
         </ul>
 
       </Menu>

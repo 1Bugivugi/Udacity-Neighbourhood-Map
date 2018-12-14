@@ -6,7 +6,8 @@ import SideBar from './SideBar'
 class Map extends Component {
 
   state = {
-    venues: []
+    venues: [],
+    globMarkers: []
   }
 
   componentDidMount(){
@@ -53,6 +54,10 @@ class Map extends Component {
         infoWindow.setContent('<div>' + '<div class="infoContent">' + infoWindowContent + '</div>' + infoWindowContentName + '</div>')
         infoWindow.open(map, marker)
       })
+
+      this.setState((prevState) => ({
+        globMarkers: marker
+      }))
     })
   }
 
@@ -63,6 +68,10 @@ class Map extends Component {
   loadMap = () => {
     loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyACKfranXXLfxanE5a_jhjxF0nE_Qph-Mw&v=3&callback=initMap')
     window.initMap = this.initMap
+  }
+
+  triggerClick = () => {
+    myClick()
   }
 
 /*
@@ -97,6 +106,8 @@ class Map extends Component {
       <section>
         <SideBar
           venues={this.state.venues}
+          globMarkers={this.state.globMarkers}
+          clickHandler={this.triggerClick}
         />
         <div id="page-wrap">
         </div>
@@ -114,6 +125,10 @@ function loadScript(url) {
   script.async = true;
   script.defer = true
   index.parentNode.insertBefore(script, index) //inserts our script before the very 1st one, to make ours 1st(to keep it at the very beginning of the scripts list)
+}
+
+function myClick(i) {
+  window.google.maps.event.trigger(this.state.globMarkers, 'click')
 }
 
 export default Map;
