@@ -2,16 +2,31 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import SideBar from './SideBar'
+import MediaQuery from 'react-responsive';
+
 
 class Map extends Component {
 
   state = {
     venues: [],
-    globMarkers: []
+    globMarkers: [],
+    globMarkersTwo: []
   }
 
   componentDidMount(){
     this.getVenues()
+  }
+
+/*
+  Filtering the results for SideBar
+*/
+
+  filter = (query) => {
+    this.setState({
+      globMarkers: this.state.globMarkersTwo.filter((val) => {
+        return val.title.toLowerCase().includes(query.toLowerCase())
+      })
+    })
   }
 
 /*
@@ -21,8 +36,10 @@ class Map extends Component {
   initMap = () => {
     const map = new window.google.maps.Map(document.getElementById('map'), {
         center: {lat: 30.2672, lng: -97.7431},
-        zoom: 13
+        zoom: 15
       });
+
+    let globMarkers = []
 
     /*
       Creating an Info Window
@@ -43,7 +60,7 @@ class Map extends Component {
         position: {lat: myVenue.venue.location.lat , lng: myVenue.venue.location.lng},
         map: map,
         title: myVenue.venue.name,
-        animation: window.google.maps.Animation.DROP,
+        animation: window.google.maps.Animation.DROP
       })
 
 
@@ -55,10 +72,11 @@ class Map extends Component {
         infoWindow.open(map, marker)
       })
 
-      this.setState((prevState) => ({
-        globMarkers: marker
-      }))
+      globMarkers.push(marker)
+
+
     })
+    this.setState({globMarkers, globMarkersTwo: globMarkers})
   }
 
 /*
@@ -68,10 +86,6 @@ class Map extends Component {
   loadMap = () => {
     loadScript('https://maps.googleapis.com/maps/api/js?key=AIzaSyACKfranXXLfxanE5a_jhjxF0nE_Qph-Mw&v=3&callback=initMap')
     window.initMap = this.initMap
-  }
-
-  triggerClick = () => {
-    myClick()
   }
 
 /*
@@ -105,9 +119,9 @@ class Map extends Component {
     return(
       <section>
         <SideBar
-          venues={this.state.venues}
           globMarkers={this.state.globMarkers}
           clickHandler={this.triggerClick}
+          filter={this.filter}
         />
         <div id="page-wrap">
         </div>
@@ -118,6 +132,7 @@ class Map extends Component {
   }
 }
 
+
 function loadScript(url) {
   let index = window.document.getElementsByTagName('script')[0];  //(the reference of the script tag) selects the 1st script tag in the document
   let script = window.document.createElement('script'); //creating script tag, obv
@@ -127,8 +142,5 @@ function loadScript(url) {
   index.parentNode.insertBefore(script, index) //inserts our script before the very 1st one, to make ours 1st(to keep it at the very beginning of the scripts list)
 }
 
-function myClick(i) {
-  window.google.maps.event.trigger(this.state.globMarkers, 'click')
-}
 
 export default Map;

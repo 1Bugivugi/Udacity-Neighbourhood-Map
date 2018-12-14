@@ -10,6 +10,7 @@ class SideBar extends Component {
 
   updateQuery = (query) => {
     this.setState({ query })
+    this.props.filter(query)
   };
 
 
@@ -33,8 +34,8 @@ class SideBar extends Component {
           onChange={(event) => this.updateQuery(event.target.value)}
         />
         <ul>
-          {this.props.venues && this.props.venues.map((myVenue, index) => (
-              <li key={myVenue.venue.id}><a href='#' onClick={this.props.clickHandler}>{myVenue.venue.name}</a></li>
+          {this.props.globMarkers && this.props.globMarkers.map((globMarker, index) => (
+              <li key={index} onClick={() => {window.google.maps.event.trigger(globMarker, 'click')}}><a href='#'>{globMarker.title}</a></li>
           ))}
         </ul>
 

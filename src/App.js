@@ -6,10 +6,6 @@ import Header from './components/Header'
 
 class App extends Component {
 
-  state = {
-    sideBarOpen: false
-  }
-
   render(){
     return(
       <main>
