@@ -1,44 +1,42 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Neighborhood Project
 
-## Available Scripts
+This project is the final project for the Udacity Front End Nanodegree, an interactive Neighborhood Map programmed with React. One day I want to move to USA and Austin, Texas seems quite a good choice, you're welcome to explore its sights and places with me!
 
-In the project directory, you can run:
+## Installation and Running the Project
 
-### `npm start`
+To install and use the project:
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+* **Zip-Download:** Download the repository as a zip-file, extract it, use Git Bash to change
+into the project directory.
+* **Clone the Repository:** Clone the repository with Git Bash to your machine with: ```git clone https://github.com/1Bugivugi/Udacity-Neighbourhood-Map/```.
+* install all project dependencies with `npm install`
+* start the development server with `npm start`
+* ater running `npm start`, the React App should open automatically in your browser. If it doesn't, open `localhost:3000` in your Browser.
+* **Service-Workers** only work in build-mode, not in the dev-mode. Run `npm run build` to build the app.
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+## Future Updates
 
-### `npm test`
+More features to come soon! I'm planning to add more details about the places, let YOU ADD YOUR places and few other functionalities.
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Dependencies
 
-### `npm run build`
+* The map is provided by [Google Maps API](https://cloud.google.com/maps-platform/)
+* The data for the markers and popups comes from the [Foursquare API](https://developer.foursquare.com/)
+* [AXIOS](https://github.com/axios/axios) is used for fetching the data from the Foursquare.
+* External library [React burger menu](https://github.com/negomi/react-burger-menu) is used for the SideBar component.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Credits
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+* The [Udacity React lessons about controlled components](https://classroom.udacity.com/nanodegrees/nd001/parts/c3e7b0d6-ffef-4421-b5fc-6df10fd0a1ae/modules/82766b2b-1870-4904-aa90-8ccbe63928c5/lessons/14331e60-a548-4cfb-a326-054545da8927/concepts/fc3f11d3-8779-4d8a-8a23-1cd782f8ddf3) helped me to implement the basic version of the search function.
+* [Yayha Elharony's tutorials](https://www.youtube.com/watch?v=ywdxLNjhBYw&list=PLgOB68PvvmWCGNn8UMTpcfQEiITzxEEA1) helped me to set up my project with a combination of vanilla JavaScript and React.
+* Along this journey The Turtle Squad gave me the power and the help needed to go on when I thought that I couldn't make it any more.
+* Big thanks to the Udacity team for all their positivity and support!
+* Also huge regards to a few fellow students who helped me along the way, no way I could've finished this course without them.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Create React App
 
-### `npm run eject`
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Contributing
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This repository is my project as a Udacity student. I am planning to work on the project and to update it in the future to document how my programming skills grow and develop. Therefore, I most likely will not accept pull requests.
