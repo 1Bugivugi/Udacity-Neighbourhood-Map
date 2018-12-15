@@ -43,7 +43,7 @@ a {
   Search Input
 */
 
-.search-input {
+.bm-item.search-input {
   color: rgb(78, 116, 232);
   width: 98%;
   height: 20px;
@@ -96,7 +96,7 @@ a {
   margin-bottom: 10px;
   /* color: #6c9ff7; */
   transition: color 0.2s;
-  /* height: 800px; */
+  height: 800px;
 }
 
 .bm-item:hover {
