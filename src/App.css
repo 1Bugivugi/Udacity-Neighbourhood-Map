@@ -96,6 +96,7 @@ a {
   margin-bottom: 10px;
   /* color: #6c9ff7; */
   transition: color 0.2s;
+  height: 800px;
 }
 
 .bm-item:hover {

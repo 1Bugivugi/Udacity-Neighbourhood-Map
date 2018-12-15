@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import '../App.css';
 import axios from 'axios';
 import SideBar from './SideBar'
-import MediaQuery from 'react-responsive';
-
 
 class Map extends Component {
 
@@ -141,6 +139,7 @@ function loadScript(url) {
   script.defer = true
   index.parentNode.insertBefore(script, index) //inserts our script before the very 1st one, to make ours 1st(to keep it at the very beginning of the scripts list)
 }
+
 
 
 export default Map;
